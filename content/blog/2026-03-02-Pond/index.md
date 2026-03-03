@@ -50,10 +50,10 @@ Pond uses a machine learning (ML) system interconnected with the VM scheduler. T
 The researchers evaluated Pond using a mix of lab experiments and large-scale simulations. They tested 158 different workloads. Including proprietary cloud workloads, Redis, Spark, GAPBS, TPC-H, and SPEC CPU 2017, under emulated CXL latencies of 182% and 222% relative to local DRAM. To evaluate end-to-end memory savings, they fed their simulator with production VM traces collected from 100 Azure clusters over a 75-day period.
 
 # Results
-Pond's evaluation yielded several compelling findings
+Pond's evaluation yielded several compelling findings.
 
 ## Cost Savings
-By pooling memory across 8-16 sockets, Pond achieved a 7-9% reduction in overall DRAM requirements, which translates to a massive 3.5% reduction in total cloud hardware costs. Larger pool sizes provided diminishing returns and incurred higher latency penalties. In contrants, scaling up to 64 sockets yeilded 13% savings but doing so required CXL switches that pushed access latencies byeond 270ns.
+By pooling memory across 8-16 sockets, Pond achieved a 7-9% reduction in overall DRAM requirements, which translates to a massive 3.5% reduction in total cloud hardware costs. Larger pool sizes provided diminishing returns and incurred higher latency penalties. In contrast, scaling up to 64 sockets yeilded 13% savings but doing so required CXL switches that pushed access latencies byeond 270ns.
 
 ## Performance
 The ML prediction model achieves 7-9% saving by pooling by successfully identifying 25% of untouched memory across the fleet while only overpredicting for 4% of VMs.
@@ -79,5 +79,4 @@ Software allocators (like user-space malloc) tend to fragment memory, grabbing m
 Pond represents a major step forward in cloud infrastructure, demonstrating that CXL-based memory pooling is both viable and economically impactful. By intelligently combining a multi-headed hardware controller with a software-defined zNUMA abstraction and machine learning telemetry, Pond successfully reclaims stranded memory. It achieves near-local DRAM performance while significantly driving down the hardware costs that plague modern datacenters, making it an essential blueprint for the future of cloud scaling.
 
 # AI Disclosure
-- Gemini to help summarize paper and scribe notes
-
+- Gemini to help summarize paper and scribe notes.
